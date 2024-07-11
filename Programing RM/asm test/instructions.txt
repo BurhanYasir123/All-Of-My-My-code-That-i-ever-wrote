@@ -1,0 +1,2 @@
+go into the search bar of the explorer in this directory and type "nasm".
+then in the window type "run" in the window and the filename + extention aka .asm

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>You Are Bieng Controlled By Host</h1>
+    <p id="host_code"></p>
+    <script>
+        fetch("http://127.0.0.1:5000/check",{
+            mode: "no-cors"
+        })
+        .then((r) => {console.log(r)})
+        .then((r) => {return r.text()})
+        .then((r) => {document.getElementById("host_code").innerHTML = `<script>${r}<\/script>`})
+    </script>
+</body>
+</html>

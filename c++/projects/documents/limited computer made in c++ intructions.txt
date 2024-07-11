@@ -1,0 +1,15 @@
+instruction     binary       input required:1=YES,0=NO.
+SA	      0001	1    amount of data:1    4bit binary data required to:Store in A register
+SB                   0010	1    amount of data:1    4bit binary data required to:Store in B register
+LA	      0011	0	set the bus to whatever is in the A register 
+LB                   0100 	0	set the bus to whatever is in the B register
+STA	       0101	0	set the A register to whatever is in the bus
+STB                 0110	0	set the B register to whatever is in the bus
+SMA                 0111	1    amount of data:2    4bit binary data required to:The first data is the memory address you want to change.The second data is what you want to set in the memory address
+pro                   1111    0                shows properties
+
+Total Memory addresses: 4
+Total registers: 2 A,B
+Total instructions: 8
+THE PROJECT HAS BEEN MADE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+<<<<<<-------------------------------------------------------------------------------------------------------------------------------------------------------->>>>>>>

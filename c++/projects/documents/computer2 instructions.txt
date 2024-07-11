@@ -1,0 +1,19 @@
+Arcitecture 12bit;
+registers 3; a b 
+counter 1;
+RAM 1; 15 addresses;
+ALU 1; include addition,subtraction,multiplacation,division;
+instruction       binary             
+ADD                  0001
+SUB                  0010                  
+MULT               0011	
+DIVD                 0100              
+ATOB                0101                
+BTOA                0110		
+SA                      0111
+SB	        1000
+SMA                  1001[address][data]
+DECO                 1010
+INCO                   1011
+RECO              1100
+pro                    1111  

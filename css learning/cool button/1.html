@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <link rel="stylesheet.css" href="style.css">
+    <div class="parent" id="parent">
+        <div class="child" id="child"></div>
+    </div>
+    <br>
+    <button onclick="detect()">
+        switch
+    </button>
+    <style>
+        .parent {
+            height: 150px;
+            width: 300px;
+            background-color: gray;
+            border: 10px solid black;
+            border-radius: 100px;
+        }
+        .child {
+            height: 150px;
+            width: 50%;
+            background-color: red;
+            border-radius: 100px;
+            transition: 500ms;
+        }
+        button {
+            height: 50px;
+            width: 100px;
+            background-color: gray;
+            border-radius: 100px;
+            font-size: 25px;
+        }
+    </style>
+    <script>
+        let num = 0
+        function detect(){
+            document.getElementById("child").style.transform = "translateX(100%)"
+            document.getElementById("child").style.backgroundColor = "green"
+            num = num + 1
+            if(num >= 2){
+                document.getElementById("child").style.transform = "translateX(0%)"
+                document.getElementById("child").style.backgroundColor = "red"
+                num = 0
+            }
+        }
+    </script>
+</body>
+</html>

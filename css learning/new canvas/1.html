@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="master_flex" id="master" style="display: flex;width: 500px;height: 500px;flex-direction: column;"></div>
+    <script>
+
+        let arr = []
+        let flexes = []
+        const res = 10
+        for(let i = 0;i!=res;i++){
+            let row = []
+            for(let j = 0;j!=res;j++){
+                row.push(0)
+            }
+            arr.push(row)
+        } 
+        for(let i = 0;i!=res;i++){
+            let flex = document.createElement("div")
+            flexes.push(flex)
+        }
+        for(let i = 0;i!=res;i++){
+            for(let j = 0;j!=res;j++){
+                flexes[i].append(create(i+j))
+            }
+        }
+        function create(id){
+            let height = 500/document.getElementById("master").style.height
+            let width = 500/document.getElementById("master").style.width
+            let element = document.createElement("div")
+            element.style.width = width
+            element.style.height = height
+            element.style.backgroundColor = "black"
+            element.style.border = "solid white 1px"
+            element.setAttribute("id",id)
+            return element
+        }
+        for(let i = 0;i!=res;i++){
+            document.getElementById("master").append(flexes[i])
+        }
+    </script>
+</body>
+</html>
