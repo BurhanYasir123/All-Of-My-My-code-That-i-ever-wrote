@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class address{
+            constructor(){
+                this.binary = "000000000000"
+            }
+            set(binaryenterd){
+                if(binaryenterd.length == 12){
+                    this.binary = binaryenterd
+                }
+            }
+            return(){
+                return this.binary
+            }
+        }
+        let rom = {
+            address1: new address,
+            address2: new address,
+            address3: new address,
+            address4: new address,
+            address5: new address,
+            address6: new address,
+            address6: new address,
+            address7: new address,
+            address8: new address,
+            address9: new address,
+            address10: new address
+        };
+    </script>
+</body>
+</html>

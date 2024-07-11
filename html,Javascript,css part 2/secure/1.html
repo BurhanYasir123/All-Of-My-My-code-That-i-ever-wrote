@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Key to Encrypt or Decrypt
+        let key = " zyxwvutsrqponmlkjihgfedcba"
+
+
+
+
+
+
+        function find(arr,thing){
+            for(let i=0;i!=arr.length;i++){
+                if(arr[i] == thing){
+                    return i;
+                }
+            }
+        }
+        let password = "hello"
+        let abc = "abcdefghijklmnopqrstuvwxyz "
+        abc = Array.from(abc)
+        key = Array.from(key)
+        function encrypt_or_decrypt(thing,key){
+            abc = Array.from(abc)
+            thing = Array.from(thing)
+            for(let i = 0;i!=thing.length;i++){
+                thing[i] = key[find(abc,thing[i])]
+            }
+            return thing.join("");
+        }
+        function advanced(thing,abc){
+            abc = Array.from(abc)
+            let random = ""
+            for(let i = 0;i!=3;i++){
+                random = random + abc[Math.floor(Math.random() * abc.length)]
+            }
+            thing = random + thing
+            random = ""
+            for(let i = 0;i!=3;i++){
+                random = random + abc[Math.floor(Math.random() * abc.length)]
+            }
+            thing = thing + random
+            return thing
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let temp;
+        function math(operand,num1,num2){
+            if(perm_of_math){
+                if(operand == "+"){
+                    console.log(num1+num2)
+                }
+                if(operand == "-"){
+                    console.log(num1-num2)
+                }
+                if(operand == "*"){
+                    console.log(num1*num2)
+                }
+                if(operand == "/"){
+                    console.log(num1/num2)
+                }
+                if(operand == "power"){
+                    temp = num1
+                    if(num1 != 1){
+                        for(let i = 0 ; i != num2 ; i ++){
+                            temp = temp * temp
+                        }
+                    }
+                    console.log(temp)    
+                }
+            }
+            else{
+                console.log('MATH libray is not imported to import it type import("MATH")')
+            }
+        }
+        let perm_of_math = false
+        let MATH = {
+            enable:() => {
+                perm_of_math = true
+            },
+            disable:() => {
+                perm_of_math = false
+            }
+        }
+        let libs = [MATH,"",""]
+        let found = false
+        function import_library(lib){
+            for(let i = 0 ; i != libs.length; i++){
+                if(lib == libs[i]){
+                    libs[i].enable()
+                    found = true
+                }
+            }
+            if(!found){
+                console.log("library not found")
+            }
+            else{
+                console.log("library imported sucessfully")
+            }
+        }
+    </script>
+</body>
+</html>

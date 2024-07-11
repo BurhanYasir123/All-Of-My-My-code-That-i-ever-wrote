@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bouncing Square Example</title>
+	<style>
+		.container {
+			width: 550px;
+			height: 605px;
+			display: flex;
+			flex-wrap: wrap;
+			border: 5px solid black;
+			box-sizing: border-box;
+			padding: 5px;
+			position: relative;
+		}
+		.box {
+			background-color: blue;
+			width: 50px;
+			height: 50px;
+			box-sizing: border-box;
+			border: 1px solid black;
+			position: absolute;
+			animation: none;
+		}
+		.trail {
+			background-color: rgba(0, 0, 255, 0.5);
+			width: 50px;
+			height: 50px;
+			box-sizing: border-box;
+			border: 1px solid black;
+			position: absolute;
+			animation: fadeout 1s forwards;
+		}
+		@keyframes fadeout {
+			0% { opacity: 1; }
+			100% { opacity: 0; }
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div id="box" class="box"></div>
+	</div>
+	<script>
+		// Get the box element
+		var box = document.getElementById("box");
+
+		// Set the initial position of the box
+		var row = 0;
+		var col = 0;
+		box.style.left = (col * 55) + "px";
+		box.style.top = (row * 55) + "px";
+
+		// Set the initial direction of the box
+		var dirRow = 1;
+		var dirCol = 1;
+
+		// Define the animation function
+		function animate() {
+			// Update the position
+			col += dirCol;
+			if (col > 9) {
+				col = 9;
+				dirCol = -1;
+			} else if (col < 0) {
+				col = 0;
+				dirCol = 1;
+			}
+			row += dirRow;
+			if (row > 10) {
+				row = 10;
+				dirRow = -1;
+			} else if (row < 0) {
+				row = 0;
+				dirRow = 1;
+			}
+
+			// Create a trail element
+			var trail = document.createElement("div");
+			trail.classList.add("trail");
+			trail.style.left = (col * 55) + "px";
+			trail.style.top = (row * 55) + "px";
+
+			// Append the trail element to the container
+			var container = document.querySelector(".container");
+			container.appendChild(trail);
+
+			// Update the position of the box
+			box.style.left = (col * 55) + "px";
+			box.style.top = (row * 55) + "px";
+
+			// Request the next animation frame
+			setTimeout(animate,100)
+			console.log(`${col} ${row}`)
+		}
+
+		// Start the animation
+		animate();
+	</script>
+</body>
+</html>

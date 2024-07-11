@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inputone">
+    <br>
+    <br>
+    <input type="text" id="inputtwo">
+    <br>
+    <h1 id="output"></h1>
+    <button onclick="simulate()">simulate</button>    
+</body>
+<script>
+    function simulate(){
+        hello = 0
+        const inputone =document.getElementById("inputone").value;
+        const inputtwo =document.getElementById("inputtwo").value;
+        if(inputone === "1"){
+            hello = hello + 1
+        }
+        if(inputtwo === "1"){
+            hello = hello + 1
+        }
+        if(hello === 2){
+            const output =document.getElementById("output").innerText = "output:1";
+        }
+        else{
+            const output =document.getElementById("output").innerText = "output:0";
+        }
+    }
+</script>
+</html>

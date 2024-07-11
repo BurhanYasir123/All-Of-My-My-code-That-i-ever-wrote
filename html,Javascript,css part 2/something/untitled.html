@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body">
+    <p onclick="change()" onmouseenter="change2('p','red')" onmouseleave="change2('p','#1abdfd')" id="p" style="display: block;">
+        HELLO
+    </p>
+    <h3 id="write" style="display: none;">
+
+    </h3>
+    <script>
+        function change(){
+            let write2 = "";
+            document.getElementById("p").style.display = "none"
+            document.getElementById("body").style.backgroundColor = "red"
+            document.getElementById("write").style.display = "block"
+            setTimeout(() => {
+                write2 += "CRASHING." + "<br>"
+                document.getElementById("write").innerHTML = write2
+                setTimeout(() => {
+                    write2 += "CRASHING.." + "<br>"
+                    document.getElementById("write").innerHTML = write2
+                    setTimeout(() => {
+                        write2 += "CRASHING..." + "<br>"
+                        document.getElementById("write").innerHTML = write2
+                        setTimeout(() => {
+                            write2 += "CRASHED" + "<br>"
+                                document.getElementById("write").innerHTML = write2
+                                alert("CRASHED")
+                                alert("<untitled.HTML IS UNRESPONSIVE...ERROR: CANNOT HANDLE HIGH PAYLOAD>")
+                            for(let i = 0; i != Infinity ; i++){
+                                document.write(".")
+                            }
+                        }, 1000);
+                    }, 1000);        
+                }, 1000);
+            }, 1000);
+        }
+        function change2(id,color){
+            document.getElementById(id).style.backgroundColor = color;
+        }
+    </script>
+    <style>
+        p {
+            background-color: #1abdfd;
+            color: white;
+            font-size: 50px;
+            align-items: center;
+            position: absolute;
+            right: 650px;
+            height:60px;
+            width: 165px;
+        }
+    </style>
+</body>
+</html>

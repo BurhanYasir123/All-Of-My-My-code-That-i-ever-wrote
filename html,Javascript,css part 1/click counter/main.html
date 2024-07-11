@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let count = 0;
+        function counter() {
+            document.getElementById('counter').innerText = count + 1;
+            count = count + 1;
+        }
+    </script>
+</head>
+<body>
+     <buton onclick="counter()">click</buton>  
+   <p id="counter">0</p>
+    <style>
+        body{
+            background-color: blue;
+          font-size: 100px;
+        }
+     
+    </style>
+</body>
+</html>

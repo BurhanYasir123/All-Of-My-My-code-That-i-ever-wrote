@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<script>
+  function submit(){
+   const ans = document.getElementById("ans").value;
+   if(ans == "burhan"){
+     alert("correct")
+   }
+   else{
+      alert ("burhan was correct")
+      const ans = document.getElementById("ans").value = "burhan";
+   }
+  }
+   
+
+</script>
+<body>
+   my name
+   <input type="text" id="ans">
+   <button onclick="submit()">submit</button>
+   
+</body>
+</html>

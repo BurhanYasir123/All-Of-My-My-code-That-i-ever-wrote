@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input 
+        type="text"
+        placeholder="Enter Text"
+        id="Text"
+    >
+    <button onclick="start()">Encrypt/Decrypt</button>
+    <h3 id="output">Output</h3>
+    <script>
+        let text = document.getElementById("Text").value;
+        let list = " abcdefghijclmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-=[];'\,./!@#$%^&*()_+{}|:<>?`~"
+        list = Array.from(list)
+        function find(thing){
+            let found = false
+            for(let i = 0;i!=list.length;i++){
+                if(list[i] == thing){
+                    found = true
+                    return i;
+                }
+                console.log(list[i]+" "+found)
+            }
+            if(found == false){
+                console.log(found)
+                return found;
+            }
+        }
+        function start(){
+            text = Array.from(text)
+            for(let i = 0;i!=text.length;i++){
+                text[i] = list[find(text[i]) - list.length]
+            }
+            document.getElementById("output").innerText = text.join("")
+        }
+    </script>
+</body>
+</html>

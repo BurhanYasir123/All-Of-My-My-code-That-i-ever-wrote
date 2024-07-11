@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>DECODER</h1>
+    <p>Enter code here ===></p><input type="text" id="code">
+    <button onclick="start()">start</button>
+    <p id="one1">1:9</p>
+    <p id="two">2:0</p>
+    <p id="three">3:0</p>
+    <p id="four">4:0</p>
+</body>
+<script>
+    function start(){
+        const one = document.getElementById("code").value;
+        if(one === "100"){
+            document.getElementById("one1").innerText = "1:1";
+            document.getElementById("two").innerText = "2:0";
+            document.getElementById("three").innerText = "3:0";
+            document.getElementById("four").innerText = "4:0";
+        }
+        if(one === "010"){
+            document.getElementById("one1").innerText = "1:0";
+            document.getElementById("two").innerText = "2:1";
+            document.getElementById("three").innerText = "3:0";
+            document.getElementById("four").innerText = "4:0";
+        }
+        if(one === "110"){
+            document.getElementById("one1").innerText = "1:0";
+            document.getElementById("two").innerText = "2:0";
+            document.getElementById("three").innerText = "3:1";
+            document.getElementById("four").innerText = "4:0";
+        }
+        if(one === "001"){
+            document.getElementById("one1").innerText = "1:0";
+            document.getElementById("two").innerText = "2:0";
+            document.getElementById("three").innerText = "3:0";
+            document.getElementById("four").innerText = "4:1";
+        }
+        
+    }
+</script>
+</html>

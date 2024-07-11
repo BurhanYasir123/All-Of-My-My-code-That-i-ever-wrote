@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="start()">run</button>
+    <h1 id="out"></h1>
+</body>
+<script>
+    function start(){
+        const memin1 = 0000
+        const memad1 = 0000
+
+        const memin2 = 0000
+        const memad2 = 0000
+
+        const memin3 = 0000
+        const memad3 = 0000
+
+        const memin4 = 0000
+        const memad4 = 0000
+
+        memad5 = 1
+
+        memad6 = 6
+
+        a = 0
+
+ //ins1
+
+        //ins1
+        if(memin1 === 0000 && memad1 === 0100){
+            a=memad5
+        } 
+        if(memin1 === 0000 && memad1 === 0101){
+            a=memad6
+        }
+        if(memin1 === 0001 && memad1 === 0100){
+            a=a+memad5
+        } 
+        if(memin1 === 0001 && memad1 === 0101){
+            a=a+memad6
+        }
+        if(memin1 === 0010 && memad1 === 0100){
+            a=a3memad5
+        } 
+        if(memin1 === 0010 && memad1 === 0101){
+            a=a3memad6
+        }
+
+        //ins1
+        if(memin2 === 0000 && memad2 === 0100){
+            a=memad5
+        } 
+        if(memin2 === 0000 && memad2 === 0101){
+            a=memad6
+        }
+        if(memin2 === 0001 && memad2 === 0100){
+            a=a+memad5
+        } 
+        if(memin2 === 0001 && memad2 === 0101){
+            a=a+memad6
+        }
+        if(memin2 === 0010 && memad2 === 0100){
+            a=a-memad5
+        } 
+        if(memin2 === 0010 && memad2 === 0101){
+            a=a-memad6
+        }
+
+        //ins1
+        if(memin3 === 0000 && memad3 === 0100){
+            a=memad5
+        } 
+        if(memin3 === 0000 && memad3 === 0101){
+            a=memad6
+        }
+        if(memin3 === 0001 && memad3 === 0100){
+            a=a+memad5
+        } 
+        if(memin3 === 0001 && memad3 === 0101){
+            a=a+memad6
+        }
+        if(memin3 === 0010 && memad3 === 0100){
+            a=a-memad5
+        } 
+        if(memin3 === 0010 && memad3 === 0101){
+            a=a-memad6
+        }
+        //ins1
+        if(memin4 === 0000 && memad4 === 0100){
+            a=memad5
+        } 
+        if(memin4 === 0000 && memad4 === 0101){
+            a=memad6
+        }
+        if(memin4 === 0001 && memad4 === 0100){
+            a=a+memad5
+        } 
+        if(memin4 === 0001 && memad4 === 0101){
+            a=a+memad6
+        }
+        if(memin4 === 0010 && memad4 === 0100){
+            a=a-memad5
+        } 
+        if(memin4 === 0010 && memad4 === 0101){
+            a=a-memad6
+        }
+
+
+        document.getElementById("out").innerText = a
+    }
+</script>
+</html>

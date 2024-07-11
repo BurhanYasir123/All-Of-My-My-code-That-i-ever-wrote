@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <h1 style="color: orange;font-size: 100px;" id="ts">0</h1>
+    <button onclick="startimer()" style="font-size: 50px;">start</button><button id="reset" onclick="reset()" style="font-size: 50px;">reset</button> 
+</body>
+<script>
+    function startimer(){
+        lol = 0;
+        myinterval = setInterval(timer, 1000);
+    }
+    function timer(){
+        lol=lol+1
+        const ts =document.getElementById("ts").innerText = lol;
+    }
+    function reset(){
+        lol=0
+        const ts =document.getElementById("ts").innerText = "0";
+        clearInterval(myinterval)
+    }
+</script>
+</html>

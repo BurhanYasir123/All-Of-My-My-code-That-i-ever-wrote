@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function start(){
+
+          setTimeout(() => {
+              const one =document.getElementById("one").innerText ="3s";
+              setTimeout(() => {
+                const one =document.getElementById("one").innerText ="2s";
+                 setTimeout(() => {
+                      const one =document.getElementById("one").innerText ="1s";
+                      setTimeout(() => {
+                         const one =document.getElementById("one").innerText ="you're pranked hahahahaha";
+                        two.setAttribute("style","display:block");
+                       three.setAttribute("style","display:none");
+                          four.setAttribute("style","display:none");
+                    }, 1000);
+                 }, 1000);
+             }, 1000);
+     }, 1000);
+    }
+    function reset(){
+        const one =document.getElementById("one").innerText ="";
+        two.setAttribute("style","display:none");
+        three.setAttribute("style","display:block");
+        four.setAttribute("style","display:block");
+    }
+</script>
+<body>
+     <p id="three">
+        click the button you will be somthing
+     </p>
+     <p id="one"></p>
+    <button onclick="start()" id="four">button</button>
+    <button style="display: none;" onclick="reset()" id="two">reset</button>
+</body>
+</html>

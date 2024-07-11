@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="one">
+    <br>
+    <input type="text" id="two">
+    <br>
+    <input type="text" id="three">
+    <br>
+    <input type="text" id="four">
+    <br>
+    <input type="text" id="five">
+    <br>
+    <input type="text" id="six">
+    <br>
+    <input type="text" id="seven">
+    <br>
+    <input type="text" id="eight">
+    <br>
+    <button onclick="onel()" id="one">converte</button>
+    <br>
+    <h1 id="resulte">0</h1>
+</body>
+<script>
+    let result = 0   
+    function onel(){
+        result = 0;
+        let one = document.getElementById("one").value;
+        let two = document.getElementById("two").value;
+        let three = document.getElementById("three").value;
+        let four = document.getElementById("four").value;
+        let five = document.getElementById("five").value;
+        let six = document.getElementById("six").value;
+        let seven = document.getElementById("seven").value;
+        let eight = document.getElementById("eight").value;
+        if(one === "1"){
+            result = result + 1
+            document.getElementById("resulte").innerText = result;
+        }
+        if(two === "1"){
+            result = result + 2
+            document.getElementById("resulte").innerText = result;
+        }
+        if(three === "1"){
+            result = result + 4
+            document.getElementById("resulte").innerText = result;
+        }
+        if(four === "1"){
+            result = result + 8
+            document.getElementById("resulte").innerText = result;
+        }
+        if(five === "1"){
+            result = result + 16
+            document.getElementById("resulte").innerText = result;
+        }
+        if(six === "1"){
+            result = result + 32
+            document.getElementById("resulte").innerText = result;
+        }
+        if(seven === "1"){
+            result = result + 64
+            document.getElementById("resulte").innerText = result;
+        }
+        if(eight === "1"){
+            result = result + 128
+            document.getElementById("resulte").innerText = result;
+        }
+    }
+</script>
+</html>

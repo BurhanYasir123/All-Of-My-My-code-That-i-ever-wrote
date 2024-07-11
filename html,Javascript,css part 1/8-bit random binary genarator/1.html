@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="one">0</p>
+    <p id="two">0</p>
+    <p id="three">0</p>
+    <p id="four">0</p>
+    <p id="five">0</p>
+    <p id="six">0</p>
+    <p id="seven">0</p>
+    <p id="eight">0</p>
+    <button onclick="start()">genarate</button>
+</body>
+<script>
+    function start(){
+        const random = () => Math.floor(Math.random() * 2);
+        document.getElementById("one").innerText = random();
+        document.getElementById("two").innerText = random();
+        document.getElementById("three").innerText = random();
+        document.getElementById("four").innerText = random();
+        document.getElementById("five").innerText = random();
+        document.getElementById("six").innerText = random();
+        document.getElementById("seven").innerText = random();
+        document.getElementById("eight").innerText = random();
+    }
+</script>
+</html>

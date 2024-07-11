@@ -1,0 +1,26 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+ </head>
+ <script>
+     function check(){
+         const one =document.getElementById("one").value;
+         const two =document.getElementById("two").value;
+         if(one == two){
+             alert("same")
+         }
+         else{
+             alert("not same")
+         }
+     }
+ </script>
+ <body>
+     <button onclick="check()">check</button>
+     <input type="text" id="one">
+     <input type="text" id="two">
+ </body>
+ </html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function start(){
+        const one =document.getElementById("one").innerText ="starting...(done)";
+        const two =document.getElementById("two").innerText ="setup is complete...(done)";
+        const three =document.getElementById("three").innerText ="finishing...(done)";
+        button.setAttribute("style","display:block;")
+    }
+    function end(){
+        window.location=("./2.html")
+    }
+</script>
+<body>
+    <button onclick="start()">start</button>
+   <p id="one"></p>
+   <p id="two" ></p>
+   <p id="three" ></p>
+   <button style="display: none;" onclick="end()" id="button">crash</button> 
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Website</title>
+	<style>
+		body {
+		  margin: 0;
+		  padding: 0;
+		  align-items: center;
+		  justify-content: center;
+		  display: flex;
+		  height: 100vh;
+		}
+		.nav-bar {
+			display: flex;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			height: 60px;
+			background-color: gray;
+			justify-content: center;
+			border: 1px solid black;
+		}
+
+		.masterFlex {
+		  display: flex;
+		  flex-direction: column;
+		  justify-content: center;
+		  align-items: center;    
+		}
+
+		.flex-container {
+			display: flex;
+		}
+		.flex-container2 {
+			display: flex;
+			justify-content: center;
+		}
+
+		.title {
+			justify-content: center;
+			overflow: hidden;
+			line-height: 1;
+			white-space: nowrap;
+			border-right: 3px solid #fff;
+			animation: text 3.5s steps(35, end), cursor 1s step-end 4;
+		}
+		.note {
+			justify-content: center;
+		}
+		.icon {
+		  margin: 0 10px;
+		  width: 100px;
+		  height: 100px;
+		}
+		.icon2 {
+		  margin: 0 10px;
+		  width: 100px;
+		  height: 50px;
+		  text-align: center;
+		}
+		.img {
+			width: 50px;
+			height: 50px;
+			padding: 5px;
+		}
+		@keyframes text {
+		  from { width: 0; }
+		  to { width: 100%; }
+		}
+		@keyframes cursor {
+		  from, to { border-color: transparent; }
+		  50% { border-color: #000; }
+		}
+	</style>
+</head>
+<body id="body">
+	<div class="nav-bar">
+		<img src="reload.png" alt="ERROR" class="img" id="img" title="Reload the page">
+		<img src="rainbow.png" alt="ERROR" class="img" id="img2" title="Change the color of the background">
+	</div>
+	<div class="masterFlex">
+		<h1 class="title">Array of pictures and there indexes</h1>
+		<div class="flex-container2">
+			<h1 class="icon2" id="1:1">1</h1>
+			<h1 class="icon2" id="1:2">2</h1>
+			<h1 class="icon2" id="1:3">3</h1>
+			<h1 class="icon2" id="1:4">4</h1>
+			<h1 class="icon2" id="1:5">5</h1>
+		</div>
+		<div class="flex-container">
+			<img class="icon" onclick="alert(1)" id="2:1">
+			<img class="icon" onclick="alert(2)" id="2:2">
+			<img class="icon" onclick="alert(3)" id="2:3">
+			<img class="icon" onclick="alert(4)" id="2:4">
+			<img class="icon" onclick="alert(5)" id="2:5">  
+		</div>
+		<h6 class="note">Note:When you click one of the five pictures you will get the index of that image and i drawed these in microsoft paint</h6>
+	</div>
+	<script>
+		let arr = [1,2,3,4,5]
+		let i = 0
+		while(arr.length > 0){
+			i++;
+			let random = Math.floor(0 + Math.random() * arr.length);
+			let [element] = arr.splice(random, 1);
+			document.getElementById(`1:${i}`).innerText = element;
+			document.getElementById(`2:${i}`).setAttribute("src", `./painting${element}.png`);
+			document.getElementById(`2:${i}`).onclick = function() { alert(element); };
+			document.getElementById(`2:${i}`).setAttribute("title",`Hi, I am number ${element}`)
+		}
+		document.getElementById("img").onclick  = function() {window.location = "./1.html"}
+		document.getElementById("img2").onclick = function() {document.getElementById("body").style.backgroundColor = prompt("Enter the color you want to set",document.getElementById("body").style.backgroundColor)}
+	</script>
+</body>
+</html>

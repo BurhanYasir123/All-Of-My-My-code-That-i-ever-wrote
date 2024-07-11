@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <link rel="stylesheet" href="1.css">
+    <h1 id="element" onclick="change()">start</h1>
+    <script>
+        const color_arr = ["red","green","blue","purple","white"]
+        let color_slot = 0;
+        function change(){
+            document.getElementById("element").style.backgroundColor = color_arr[color_slot]
+            color_slot = color_slot + 1
+            if(color_slot == 5){color_slot = 0;document.getElementById("element").innerText = color_arr[0] + "     |      white"} 
+            else{
+            document.getElementById("element").innerText = color_arr[color_slot] + "     |      " + color_arr[color_slot - 1]
+            }
+        }
+    </script>
+</body>
+</html>

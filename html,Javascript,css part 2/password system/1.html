@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    // function server(username, password){
+    //     const users = {
+    //         "Hassan": "hassan1221",
+    //         "Burhan": "burhan123",
+    //         "Faiza": "faiza2233",
+    //         "Yasir": "Yasir3443"
+    //     }
+
+    //     // const burhan = {
+    //     //     name: "burhan",
+    //     //     class: "3",
+    //     //     age: "9"
+    //     // }
+
+    //     const passwordInDB = users[username];
+    //     if (passwordInDB) {
+    //         if (password === passwordInDB){
+    //             return true;
+    //         }
+    //     }
+
+    //     return false;
+    // }
+
+    // function start(){
+    //     // Take input from user
+    //     const pwd = document.getElementById("pwd").value;
+    //     const username = document.getElementById("username").value;
+    //     if(server(username,pwd)){
+    //         window.location ="./2.html";
+    //     }
+    //     else{
+    //         alert('incorrect username and password')
+    //     }
+    // }
+
+    // function getSum(number1, number2){
+    //     return parseInt(number1) + parseInt(number2);
+    // }
+
+    // function multipleOf10(number){
+    //     if (number % 10 === 0) return true;
+    //     else return false;
+    // }
+
+    // function start(){
+    //     const number1 = document.getElementById('test').value;
+    //     const number2 = document.getElementById('2test').value;
+
+    //     // getSum
+    //      const sum = getSum(number1,number2);
+    //     // check multipleOf10
+    //    const check= multipleOf10(sum)
+    //     // if
+    // if(check){
+    //     alert("10")
+    // }
+    // else{
+    //     alert("0s")
+    // }
+    // }
+
+    function checkIfPhoneNumberIsValid(PhoneNumber){
+        const phoneCodes = [
+            "0301",
+            "0302",
+            "0303",
+            "0304",
+            "0305",
+            "0306",
+            "0307",
+            "0308",
+            "0309"
+        ];
+
+        if (PhoneNumber.length == 11) {
+            const code = PhoneNumber.substr(1, 4);
+            const found = phoneCodes.find((phoneCode)=>{
+                if (code === phoneCode) return true;
+            });
+
+            if (found) return true;
+            else return false;
+        }
+    }
+
+
+    function start(){
+        // Take Phone Number from User
+       const phonenumber =document.getElementById("phonenumber").value;
+        // Check Phone and Save in Variable
+         const check =checkIfPhoneNumberIsValid(phonenumber);
+        if (check) {
+            alert("Phone number is valid");
+        }
+        else {
+            alert("Phone Number is not valid");
+        }
+    }
+</script>
+<body>
+
+    <!-- <p>Enter Your Username</p>
+    <input type="text" name="username" id="username"/>
+    <p>Enter Your Password</p>
+    <input type="text" name="pwd" id="pwd">
+    <br/><br/>
+    <button onclick="start()">click meeeeee</button> -->
+    
+    <!-- <input type="text" id="test">
+    <input type="text" id="2test">
+    <button onclick="start()    ">gooooooooooo</button> -->
+
+    <!-- WRITE HTML HERE -->
+    <input type="text" id="phonenumber">
+    <button onclick="start()">goooooooooooooooooooooooooooooo</button>
+</body>
+</html>

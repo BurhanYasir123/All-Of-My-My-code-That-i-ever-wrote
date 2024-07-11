@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Student{
+            constructor(name){
+                this.name = name
+            }
+            print(thing){
+                console.log(thing)
+            }
+        }
+        class Class{
+            constructor(name, limit){
+                this.name = name;
+                this.students = [];
+                this.limit = limit;
+            }
+            newstudent(...names) {
+                let index = 0; let total = names.length - 1;
+                while(this.students.length < this.limit) {
+                    this.students.push(names[index]);
+                    index++;
+                }
+                if (index != total) {
+                    console.error(this.name + " is full,The limit of 10 students is reached the ignore students were");
+                    console.log(names.slice(index));
+                }
+            }
+            printstudents(){
+                console.log(this.name+"{")
+                for(let i = 0; i != this.students.length;i++){
+                    console.log("      "+this.students[i]+",")
+                }
+                console.log("}")
+            }
+        }
+        class School{
+            constructor(name, classLimit = 10){
+                this.name = name
+                this.classes = [];
+                this.classLimit = classLimit;
+            }
+            newclass(...name) {
+                if (this.classes.length <= 10) {
+                    this.classes.push(new Class(name, this.classLimit));
+                } else {
+                    console.error(this.name + " is full,The limit of 10 classes is reached")
+                }
+            }
+            printeverything(){
+                for(let k = 0; k != this.classes.length ; k++){
+                    console.log(this.classes[k].name+"{")
+                    for(let j = 0; j != this.classes[k].students.length;j++){
+                        console.log("      "+this.classes[k].students[j]+",")
+                    }
+                    console.log("}")
+                }
+            }
+        }
+    </script>
+</body>
+</html>

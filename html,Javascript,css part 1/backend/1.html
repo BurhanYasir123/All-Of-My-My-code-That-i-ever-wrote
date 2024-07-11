@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body">
+    <p id="pop"></p>
+    <script>
+        let elements = []
+        let value = 5; // Initial variable value
+        let time = 0; // Initial variable value
+        
+        
+        document.getElementById("pop").innerText = time/1000+"s"
+        
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowUp') {
+                // Increase the variable on up arrow
+                value--;
+                elements[elements.length-1].innerText = ""
+                elements.pop()
+
+            } else if (event.key === 'ArrowDown') {
+                // Decrease the variable on down arrow
+                value++;
+                trigger()
+          }
+        });
+
+        
+        trigger = () => {
+            for(let i=0;i!=1;i++){
+                let elem = document.createElement("p")
+                elem.setAttribute("id",`${i}p`)
+                elements.push(elem)
+                document.getElementById("body").append(elem)
+            }
+        }
+        
+        value++
+        for(let i=0;i!=value;i++){
+            let elem = document.createElement("p")
+            elem.setAttribute("id",`${i}p`)
+            elements.push(elem)
+            document.getElementById("body").append(elem)
+        }
+        let thing = "0000000000"
+        let innervalue = 0
+        let inter
+        function start(){
+            inter = setInterval(() => {
+                document.getElementById("pop").innerText = time/1000+"s"
+                for(let i=1;i!=value;i++){
+                    thing = Math.floor(Math.random() * 1000).toString(2)
+                    thing = Array.from(thing)
+                    while(thing.length!=10){
+                        thing.push("0")
+                    }
+                    thing = Array.from(thing).join(" ")
+                    elements[i].innerText = thing
+                }
+            }, time);
+        }
+        start()
+        
+        document.addEventListener('keydown', (event) => {
+        if (event.key === 'w') {
+        // Increase the variable on 'W' key
+        time = time + 100;
+        document.getElementById("pop").innerText = time/1000+"s"
+        clearInterval(inter)
+        start()
+        } else if (event.key === 's') {
+        // Decrease the variable on 'S' key
+        time = time - 100;
+        document.getElementById("pop").innerText = time/1000+"s"
+        clearInterval(inter)
+        start()
+        }
+        });
+    </script>
+</body>
+</html>

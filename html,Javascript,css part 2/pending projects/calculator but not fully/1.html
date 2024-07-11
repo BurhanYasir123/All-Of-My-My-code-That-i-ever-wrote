@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style >
+        .buttons {
+            padding: 10px;
+            flex: 0.3;
+            font-size: 20px;
+        }
+        .row {
+            display: flex; 
+            flex-direction: row; 
+            justify-content: space-around;
+            margin-top: 4%;
+        }
+    </style>
+    <script >
+        let number1 = "";
+        function start(input){
+            number1 = number1 + input;
+            document.getElementById("number1").innerHTML = number1;
+        }
+        function go(){
+            number1 = "";
+            document.getElementById("number1").innerHTML = number1;
+        }
+    </script>
+</head>
+<body>
+    <div style="width: 33%; align-self: center;border: 1px solid black; height: 75vh;">
+        <!-- DISPLAY -->
+        <div style="height: 30%; width: 100%; border: 1px solid black; background-color: lightgray;">
+            <h2 id="number1"></h2> 
+        </div>
+        <!-- ACTIONS -->
+        <div class="row">
+            <button class="buttons" onclick="start('+')">+</button>
+            <button class="buttons"  onclick="start('-')">-</button>
+            <button class="buttons"  onclick="start('*')">*</button>
+            <button class="buttons"  onclick="start('/')">/</button>
+        </div>
+        <!-- BUTTON ROW 1 -->
+        <div class="row">
+            <button class="buttons"  onclick="start('9')">9</button>
+            <button class="buttons"  onclick="start('8')">8</button>
+            <button class="buttons"  onclick="start('7')">7</button>
+        </div>
+        <!-- BUTTON ROW 2 -->
+        <div class="row">
+            <button class="buttons"  onclick="start('6')">6</button>
+            <button class="buttons"  onclick="start('5')">5</button>
+            <button class="buttons"  onclick="start('4')">4</button>
+        </div>
+        <!-- BUTTON ROW 3 -->
+        <div class="row">
+            <button class="buttons"  onclick="start('3')">3</button>
+            <button class="buttons"  onclick="start('2')">2</button>
+            <button class="buttons"  onclick="start('1')">1</button>
+        </div>
+        <!-- OTHER BUTTONS -->
+        <div class="row">
+            <button class="buttons" onclick="go()">C</button>
+            <button class="buttons"  onclick="start('0')">0</button>
+            <button class="buttons"  onclick="start('=')">=</button>
+        </div>
+    </div>
+</body>
+</html>

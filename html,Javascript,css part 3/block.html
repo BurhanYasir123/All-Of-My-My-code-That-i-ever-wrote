@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="grid"></p>
+    <script>
+        let y1 = ["0","0","0","0","0","0","0","0","0","0"]
+        let y2 = ["0","0","0","0","0","0","0","0","0","0"]
+        let y3 = ["0","0","0","0","0","0","0","0","0","0"]
+        let y4 = ["0","0","0","0","0","0","0","0","0","0"]
+        let y5 = ["0","0","0","0","0","0","0","0","0","0"]
+        let y6 = ["0","0","0","0","0","0","0","0","0","0"]
+        let y7 = ["0","0","0","0","0","0","0","0","0","0"]
+        let y8 = ["0","0","0","0","0","0","0","0","0","0"]
+        let y9 = ["0","0","0","0","0","0","0","0","0","0"]
+        let y10 = ["0","0","0","0","0","0","0","0","0","0"]
+        let grid = [y1,y2,y3,y4,y5,y6,y7,y8,y9,y10]
+        let output = "";
+        function set(){
+            output = "";
+            for(let i = 0; i!=10;i++){
+                for(let j = 0 ; j!= 10;j++){
+                    output = output + grid[i][j];
+                }
+                output = output + "<br>";
+            }
+            document.getElementById("grid").innerHTML = output;
+        }
+    let y = 3-1
+    let x = 3-1
+    let key = "";
+    window.addEventListener("keydown",pressed)
+    function pressed(event){
+        grid[y][x] = "0"
+        key = event.key;
+        console.log(key)
+        console.log(y+" "+x)
+        if(y == 0){
+            y = 0
+        }
+        if(y == 9){
+            y = 9
+        }
+        if(x == 0){
+            x = 0
+        }
+        if(x == 9){
+            x = 9
+        }
+        if(key == "ArrowUp"){
+            y = y - 1
+        }
+        if(key == "ArrowDown"){
+            y = y + 1
+        }
+        if(key == "ArrowLeft"){
+            x = x - 1;
+        }
+        if(key == "ArrowRight"){
+            x = x + 1;
+        }
+        grid[y][x] = "1"
+        set()
+    }
+        
+
+    </script>
+</body>
+</html>

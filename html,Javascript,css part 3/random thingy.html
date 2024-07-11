@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="start()">random</button>
+    <p id="e">0</p>
+    <p id="ee">0</p>
+</body>
+<script>
+    three = 0
+    one1 = ""
+    two2 = ""
+    console.log("                 H I S T O R Y                    ")
+    function start(){
+        one = Math.floor(Math.random()* 100);
+        two = Math.floor(Math.random()* 100);
+        three +=1
+        document.getElementById("e").innerText = one;
+        document.getElementById("ee").innerText = two;
+        setTimeout(() => {
+        if(one > two){
+            alert(one+" is the winner")
+            one1 = " is the winner"
+        }
+        if(one < two){
+            alert(two+" is the winner")
+            two2 = " is the winner"
+        }
+        if(one === two){
+            alert(one +" "+two+" are tied")
+            one1 = "tied"
+            two2 = "tied"
+        }
+        console.log(three+":1 "+one+one1)
+        console.log(three+":2 "+two+two2)       
+        console.log("----------------------------------------")                     
+        }, 500);   
+        setTimeout(() => {
+        document.getElementById("e").innerText = "0";
+        document.getElementById("ee").innerText = "0";
+        one = 0
+        two = 0
+        }, 1000); 
+        one1 = ""
+        two2=""
+        
+    }
+</script>
+</html>
+ 
